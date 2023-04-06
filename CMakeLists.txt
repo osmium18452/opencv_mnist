@@ -9,7 +9,7 @@ set(OpenCV_DIR $ENV{OPENCV_BUILD})
 find_package(OpenCV REQUIRED)
 find_package(Torch REQUIRED)
 
-add_executable(${project_name} main.cpp)
+add_executable(${project_name} main.cpp CVAE.cpp CVAE.h headers/ProgressBar.h src/ProgressBar.cpp ArgParser.cpp ArgParser.h)
 target_link_libraries(${project_name} ${OpenCV_LIBS} ${TORCH_LIBRARIES})
 
 if (MSVC)
